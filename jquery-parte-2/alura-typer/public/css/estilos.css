@@ -1,0 +1,27 @@
+body{
+	overflow: scroll;
+}
+.frase,
+.campo-digitacao{
+	font-size: 20px;
+}
+.campo-digitacao{
+	height: 150px;
+	border: 3px solid #000;
+}
+.campo-desativado{
+	background-color: lightgray;
+}
+.icons{
+	vertical-align: middle;
+}
+.borda-verde {
+    border: 3px solid green;
+}
+
+.borda-vermelha {
+    border: 3px solid red;
+}
+.placar{
+	display: none;
+}
