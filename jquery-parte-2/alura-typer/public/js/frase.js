@@ -1,0 +1,19 @@
+function fraseAleatoria(){
+	$.get('http://localhost:3000/frases',trocaFraseAleatoria);
+}
+function trocaFraseAleatoria(data){
+	var frase = $('.frase');
+	var numeroAleatorio = Math.floor(Math.random() * data.length);
+	frase.text(data[numeroAleatorio].texto);
+	atualizaTamanhoFrase();
+	atualizaTempoInicial(data[numeroAleatorio].tempo);
+}
+function atualizaTempoInicial(tempo){
+ 	tempoInicial = tempo;
+	$('#tempo-digitacao').text(tempo);
+}
+$('#botao-frase').on('click', function(event) {
+	event.preventDefault();
+	/* Act on the event */
+	fraseAleatoria();
+});
