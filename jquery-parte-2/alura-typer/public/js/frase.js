@@ -22,8 +22,34 @@ function atualizaTempoInicial(tempo){
  	tempoInicial = tempo;
 	$('#tempo-digitacao').text(tempo);
 }
+function buscaFrase(){
+	$('#spinner').toggle();
+	var fraseId = $('#frase-id').val();
+	var dados = { id: fraseId };
+	$.get('http://localhost:3000/frases',dados,trocaFrase)
+	.fail(function(){
+		$('#erro').toggle();
+		setTimeout(function(){
+			$('#erro').toggle();
+		},2000);
+	})
+	.always(function(){
+		$('#spinner').toggle();		
+	});
+}
+function trocaFrase(data){
+	var frase = $('.frase');
+	frase.text(data.texto);
+	atualizaTamanhoFrase();
+	atualizaTempoInicial(data.tempo);
+}
 $('#botao-frase').on('click', function(event) {
 	event.preventDefault();
 	/* Act on the event */
 	fraseAleatoria();
+});
+$('#botao-frase-id').on('click', function(event) {
+	event.preventDefault();
+	/* Act on the event */
+	buscaFrase();
 });
