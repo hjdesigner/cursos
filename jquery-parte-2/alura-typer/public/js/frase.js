@@ -43,6 +43,7 @@ function trocaFrase(data){
 	atualizaTamanhoFrase();
 	atualizaTempoInicial(data.tempo);
 }
+
 $('#botao-frase').on('click', function(event) {
 	event.preventDefault();
 	/* Act on the event */
@@ -52,4 +53,9 @@ $('#botao-frase-id').on('click', function(event) {
 	event.preventDefault();
 	/* Act on the event */
 	buscaFrase();
+});
+$('#botao-sync').on('click', function(event) {
+	event.preventDefault();
+	/* Act on the event */
+	sincronizaPlacar();
 });

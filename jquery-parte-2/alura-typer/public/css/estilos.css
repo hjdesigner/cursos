@@ -35,3 +35,6 @@ body{
 #frase-id{
 	width: 30px;
 }
+#botao-sync{
+	float: right;
+}
