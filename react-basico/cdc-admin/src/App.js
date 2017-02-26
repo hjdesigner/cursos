@@ -1,8 +1,29 @@
 import React, { Component } from 'react';
 import './css/pure-min.css';
 import './css/side-menu.css';
+import $ from 'jquery';
 
 class App extends Component {
+
+  constructor(){
+    super();
+    this.state = {lista : [] }
+  }
+
+  componentDidMount(){
+    //https://cdc-react.herokuapp.com/api/autores
+    //https://cdc-react.herokuapp.com/api/livros
+    $.ajax({
+      url: "https://cdc-react.herokuapp.com/api/autores",
+      dataTyoe: 'json',
+      success: function(resposta){
+        this.setState({lista: resposta});
+      }.bind(this)
+    });
+
+  }
+
+
   render() {
     return (
       <div id="layout">
@@ -16,8 +37,8 @@ class App extends Component {
 
                 <ul className="pure-menu-list">
                     <li className="pure-menu-item"><a href="#" className="pure-menu-link">Home</a></li>
-                    <li className="pure-menu-item"><a href="#" className="pure-menu-link">Auto</a></li>                 
-                    <li className="pure-menu-item"><a href="#" className="pure-menu-link">Livro</a></li>                 
+                    <li className="pure-menu-item"><a href="#" className="pure-menu-link">Auto</a></li>
+                    <li className="pure-menu-item"><a href="#" className="pure-menu-link">Livro</a></li>
                 </ul>
             </div>
         </div>
@@ -30,25 +51,25 @@ class App extends Component {
               <div className="pure-form pure-form-aligned">
                 <form className="pure-form pure-form-aligned">
                   <div className="pure-control-group">
-                    <label htmlFor="nome">Nome</label> 
-                    <input id="nome" type="text" name="nome" value=""  />                  
+                    <label htmlFor="nome">Nome</label>
+                    <input id="nome" type="text" name="nome" value=""  />
                   </div>
                   <div className="pure-control-group">
-                    <label htmlFor="email">Email</label> 
-                    <input id="email" type="email" name="email" value=""  />                  
+                    <label htmlFor="email">Email</label>
+                    <input id="email" type="email" name="email" value=""  />
                   </div>
                   <div className="pure-control-group">
-                    <label htmlFor="senha">Senha</label> 
-                    <input id="senha" type="password" name="senha"  />                                      
+                    <label htmlFor="senha">Senha</label>
+                    <input id="senha" type="password" name="senha"  />
                   </div>
-                  <div className="pure-control-group">                                  
-                    <label></label> 
-                    <button type="submit" className="pure-button pure-button-primary">Gravar</button>                                    
+                  <div className="pure-control-group">
+                    <label></label>
+                    <button type="submit" className="pure-button pure-button-primary">Gravar</button>
                   </div>
-                </form>             
+                </form>
 
-              </div>  
-              <div>            
+              </div>
+              <div>
                 <table className="pure-table">
                   <thead>
                     <tr>
@@ -57,15 +78,21 @@ class App extends Component {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>Alberto</td>                
-                      <td>alberto.souza@caelum.com.br</td>                
-                    </tr>
+                    {
+                      this.state.lista.map(function(autor){
+                        return (
+                          <tr key={autor.id}>
+                            <td>{autor.nome}</td>
+                            <td>{autor.email}</td>
+                          </tr>
+                        )
+                      })
+                    }
                   </tbody>
-                </table> 
-              </div>             
+                </table>
+              </div>
             </div>
-           
+
         </div>
     </div>
     );
