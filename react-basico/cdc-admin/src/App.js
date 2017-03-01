@@ -27,7 +27,7 @@ class App extends Component {
         <div id="main">
 
               {this.props.children}
-              
+
         </div>
     </div>
     );
