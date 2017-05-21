@@ -1,33 +1,46 @@
 'use strict'
 
-import React from 'react'
+import React, { PropTypes } from 'react'
 import Search from './search'
 import UserInfo from './user-info'
 import Actions from './actions'
 import Repos from './repos'
 
-const AppContent = () => (
+const AppContent = ({
+  userinfo,
+  repos,
+  starred,
+  isFetching,
+  handleSearch,
+  getRepos,
+  getStarred
+}) => (
   <div className='app'>
-    <Search />
-    <UserInfo />
-    <Actions />
-    <Repos
-      className='repos'
-      title='Repositórios'
-      repos={[{
-        name: 'Nome do Repositório',
-        link: '#'
-      }]}
-    />
-    <Repos
-      className='starred'
-      title='Repositórios Favoritos'
-      repos={[{
-        name: 'Nome do Repositório',
-        link: '#'
-      }]}
-    />
+    <Search isDisabled={isFetching} handleSearch={handleSearch} />
+    {isFetching && <div>Carregando...</div>}
+    {!!userinfo && <UserInfo userinfo={userinfo} />}
+    {!!userinfo && <Actions getRepos={getRepos} getStarred={getStarred} />}
+    {!!repos.length &&
+      <Repos
+        className='repos'
+        title='Repositórios'
+        repos={repos}
+      />
+    }
+    {!!starred.length &&
+      <Repos
+        className='starred'
+        title='Repositórios Favoritos'
+        repos={starred}
+      />
+    }
   </div>
 )
+
+AppContent.prototype = {
+  userinfo: PropTypes.object,
+  repos: PropTypes.array.isRequired,
+  starred: PropTypes.array.isRequired
+}
 
 export default AppContent
