@@ -34,13 +34,21 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     - Se não houver time para a posição passada, deve retornar a mensagem:
     "Não temos a informação do time que está nessa posição."
 */
+
 function showTeamPosition(number){
-  var lugar = number;
   var time = teams[number - 1];
   
-  return number > 5 ? 'Não temos a informação do time que está nessa posição.' : 'O time que está em '+ lugar +'º lugar é o '+ time +'.';
+  return number > 5 ? 'Não temos a informação do time que está nessa posição.' : 'O time que está em '+ number +'º lugar é o '+ time +'.';
 }
 
+/*SOLUÇÃO DO DACIUK*/
+function showTeamPositionDaciuk(position){
+  if( position < 1 || position > 5){
+    return 'O time que está em ' + position + 'º lugar é o '+ teams[position - 1] +'.';
+  }else{
+    return 'Não temos a informação do time que está nessa posição.';
+  }
+}
 
 
 /*
@@ -51,18 +59,20 @@ console.log(showTeamPosition(1));
 console.log(showTeamPosition(3));
 console.log(showTeamPosition(4));
 console.log(showTeamPosition(5));
-console.log(teams.push('Sport'));
+console.log(showTeamPosition(7));
+
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
 */
-var count = 20
+var count = 20;
 
 while( count <= 30){
   console.log( count );
   count++;
 }
+
 
 /*
 Crie uma função chamada `convertToHex`, com as seguintes características:
@@ -77,25 +87,27 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 function convertToHex(color){
+  var hexa;
   switch(color){
     case 'Purple':
-    console.log('O hexadecimal para a cor '+ color +' é #800080.');
-    break;
+      hexa = '#800080';
+      break
     case 'SteelBlue':
-    console.log('O hexadecimal para a cor '+ color +' é #4682B4.');
-    break;
+      hexa = '#4682B4'
+      break;
     case 'Crimson':
-    console.log('O hexadecimal para a cor '+ color +' é #DC143C.');
-    break;
+      hexa = '#DC143C'
+      break;
     case 'Orange':
-    console.log('O hexadecimal para a cor '+ color +' é #FFA500.');
-    break;
+      hexa = '#FFA500';
+      break;
     case 'Green':
-    console.log('O hexadecimal para a cor '+ color +' é #008000.');
-    break;
+      hexa = '#008000';
+      break;
     default:
-    console.log('Não temos o equivalente hexadecimal para '+ color +'.');
+      return 'Não temos o equivalente hexadecimal para '+ color +'.';
   }
+  return 'O hexadecimal para a cor '+ color +' é '+ hexa +'.';
 }
 
 /*
