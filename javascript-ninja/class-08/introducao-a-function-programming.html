@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    //PARTE 1
+    function person(){
+      return {
+        name: 'Henrique',
+        lastName: 'Melanda'
+      }
+    }
+    function person2(){
+      var info = {
+        name: 'Henrique',
+        lastName: 'Melanda'
+      }
+      return info;
+    }
+    console.log(person());
+    console.log(person().name);
+    console.log(person().lastName);
+    console.log(person2());
+
+    //PARTE 2
+    function adder(x){
+      return function(y){
+        return x + y;
+      };
+    }
+    var add2 = adder(2)
+    console.log(add2(3));
+    console.log(adder(5)(5));
+
+    //PARTE 3
+    var car = {
+      color: 'yellow'
+    }
+    function getCarColor(mycar){
+      return mycar.color;
+    }
+    console.log(getCarColor(car));
+
+    function showItherFunction(func){
+      return func();
+    }
+    function returnFunction(){
+      return 'Returned function';
+    }
+    console.log(showItherFunction(returnFunction));
+    console.log(showItherFunction(function (){
+      return 'Function JS Ninja';
+    }));
+
+  </script>
+</body>
+</html>
