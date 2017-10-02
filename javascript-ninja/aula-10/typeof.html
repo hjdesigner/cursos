@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    //Como testar tipos e valores?
+
+    console.log(typeof 10); // number
+    console.log(typeof NaN); //number
+    console.log(typeof 'JS Ninja'); // string
+    console.log(typeof undefined); //undefined
+    console.log(typeof function() {}); //functon
+    console.log(typeof {}); //object
+    console.log(typeof []); //object
+    console.log(typeof null); //object
+
+    function subtract(num1, num2){
+      if(typeof num1 === 'number' && typeof num2 === 'number'){
+        return num1 - num2;
+      }
+      return 'Entre com dois números'
+    }
+    console.log(subtract(10,2));
+    console.log(subtract('JS',2));
+    console.log(subtract({},[]));
+
+    function subtract2(num1, num2){
+      if(num1 === null){
+        return 'Não entre com valores nulos!'
+      }
+      return num1 - num2
+    }
+    console.log(subtract2(10,5));
+    console.log(subtract2(null,10));
+  </script>
+</body>
+</html>
