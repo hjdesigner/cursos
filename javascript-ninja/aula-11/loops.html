@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //do / while
+    //Primeiro ele entra na instrução para verificar se ele é verdadeiro
+
+    var counter = 1;
+    var counter2 = 1;
+
+    while( counter < 10 ){
+      console.log(counter ++);
+    }
+    console.log('counter não é mais menor que 10');
+
+    do{
+      console.log( counter2++ );
+    }while(counter2 < 10);
+    console.log('counter2 não é mais menor que 10');
+
+    for(var i = 0; i < 10; i++){
+      console.log(i);
+    }
+    console.log('i não é mais menor que 10');
+    
+    var car = {
+      brand: 'VW',
+      model: 'Gol',
+      year: 2013
+    }
+    console.log(car);
+
+    for(var prop in car){
+      console.log(prop);
+      console.log(car[prop]);
+    }
+    console.log('brand in car?','brand' in car);
+    console.log('doors in car?','doors' in car);
+
+  </script>
+</body>
+</html>

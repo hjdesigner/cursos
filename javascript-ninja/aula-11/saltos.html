@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //SALTOS NO JS
+    //São instruções para pular algumas partes do js
+    //exemplo de um é o return
+    //break
+    //continue
+
+    function myFunction(){
+      var number = 10;
+
+      if( number === 10){
+        return true;
+      }
+      var number2 = 5;
+      var name = 'Henrique Melanda';
+      
+      return name + ' ' + number2;
+    }
+
+    console.log(myFunction());
+
+    var number3 = 10
+    switch( number3 ){
+      case 1:
+        console.log('1');
+        break;
+      case 2:
+        console.log('2');
+        break;
+      case 10:
+        console.log('10');
+        break;
+      default:
+        console.log('default');
+    }
+    console.log('fim do switch');
+    var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    for( var i = 0; i < arr.length ; i++ ){
+      if( i == 5){
+        break;
+      }
+      console.log(i);
+    }
+    console.log('Fim do for usando break');
+    for( var i = 0; i < arr.length ; i++ ){
+      if( i % 2 !== 0){
+        continue;
+      }
+      console.log(i);
+    }
+    console.log('mostrando os numeros pares com o salto continue');
+  </script>
+  
+</body>
+</html>
