@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    var obj = {
+      prop1: 'prop1',
+      prop2: 'prop2'
+    }
+    var obj2 = {
+      prop1: 'prop1',
+      prop2: 'prop2'
+    }
+    var obj5 = Object.create(obj);
+    obj5.prop1 = 'abc';
+
+    var str = JSON.stringify(obj);
+
+    console.log(Object.keys(obj));
+    console.log(Object.keys(obj).length);
+    console.log(obj.isPrototypeOf(obj5));
+    console.log(obj5.isPrototypeOf(obj));
+    console.log(str);
+    console.log(JSON.parse(str));
+
+    var arr = [];
+    arr[0] = 10;
+    arr[1] = 10;
+    arr[2] = 'oito';
+    arr[12] = 'doze';
+    //coloca no final
+    arr.push('treze');
+    //remove do final
+    arr.pop();
+    console.log(arr);
+    var arr2 = [];
+    arr2.push('arroz');
+    arr2.push('feijao');
+    arr2.push('macarrao');
+    arr2.push('feijao');
+    var last = arr2.pop();
+    console.log(arr2);
+    console.log(last);
+    //Ele junta em uma string
+    console.log(arr2.join());
+    //dando um espaço
+    console.log('Meu almoço hoje sera: ', arr2.join(', '));
+    //Um efeito colateral ele modifica o arrey original
+    console.log(arr2.reverse());
+    //Para ordernar por order alfabetica
+    console.log(arr2.sort());
+  </script>
+</body>
+</html>

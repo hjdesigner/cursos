@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    //Objeto literais
+    var obj = {
+      prop1: 'prop1',
+      prop2: 'prop2'
+    }
+    var obj2 = {
+      prop1: 'prop1',
+      prop2: 'prop2'
+    }
+    obj.prop1 = '1';
+    //delete obj2.prop2;
+    //obj2.prop2 = 'prop2';
+    var objtcopy = obj
+
+    //Com contructor (new)
+    var newObj = new Object();
+    //Com  object.create()
+    var obj5 = Object.create(obj);
+    obj5.prop1 = 'abc';
+
+    console.log(obj);
+    console.log(obj.toString);
+    console.log(obj2);
+    console.log(obj === obj2);
+    console.log(objtcopy);
+    console.log(obj === objtcopy);
+    console.log(obj5.prop1);
+    console.log(obj5.toString);
+    console.log(obj.hasOwnProperty('prop1'));
+    console.log(obj5.hasOwnProperty('prop1'));
+    console.log(obj5.hasOwnProperty('prop2'));
+
+    for( var prop in obj5 ){
+      if(obj5.hasOwnProperty(prop)){
+        console.log(prop);
+      }
+    }
+  </script>
+</body>
+</html>
