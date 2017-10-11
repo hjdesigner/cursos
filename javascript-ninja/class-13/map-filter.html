@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    var arr = [1,2,3,4,5];
+
+    var map = arr.map(function(item, index, array){
+      return item + 1;
+    });
+    console.log(map);
+    console.log(arr);
+
+    var map2 = arr.map(function(item, index, array){
+      return {id: index, item: item};
+    });
+
+    console.log(map2);
+
+    var newArray = [];
+    arr.forEach(function(item, index, array){
+      newArray.push({id: index, item: item});
+    });
+
+    console.log(newArray);
+    
+    var map3 = arr.map(function(item){
+      return item + 10;
+    }).filter(function(item){
+      return item > 13;
+    });;
+
+    var filter = map3.filter(function(item){
+      return item > 13;
+    });
+
+    console.log(map3);
+  </script>
+</body>
+</html>
