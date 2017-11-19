@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var arr = [1, 2, 3, 4, 5];
+    var arr2 = ['R','o','d','r','i','g','u','e','s']
+    //E ele  retorno o indice aonde esta o elemento que estamos produrando
+    //Se não existir vai retornar -1
+    //Pode se passar um segundo parametro que informa a partir de indice quer que comece
+    console.log(arr.indexOf( 3 ));
+    console.log(arr2.indexOf( 'o', 1 ));
+    console.log(arr2.indexOf( 'o', 1 ) > -1);
+
+    //LastIndexOf procura do final para o inicio e faz a mesa coisa do indexOf
+    //Se passar o segundo parametro ele começa a producar do inicio
+    var index = arr2.lastIndexOf('i');
+    console.log( arr2[index]);
+    console.log(arr2.lastIndexOf('e'));
+    console.log(arr2.lastIndexOf('e') > -1);
+
+    //Serve para virificar se aquilo é um array de verdade
+    console.log(Array.isArray(arr));
+    console.log(Array.isArray(arr2));
+    console.log(Array.isArray({}));
+  </script>
+</body>
+</html>

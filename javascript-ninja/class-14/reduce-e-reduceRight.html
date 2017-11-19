@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    var arr = [1, 2, 3, 4, 5];
+    var arr2 = ['H','e','n','r','i','q','u','e']
+    
+    // ele não modifica o array principal e não retorna o array.
+    var reduce = arr.reduce(function(acumulado, atual, index, array){
+      return acumulado + atual;
+    }, 0);
+
+    var reduce2 = arr2.reduceRight(function (acumulado, atual, index, array) {
+      return acumulado + atual;
+    });
+
+    /*
+    1   -    0 + 1 = 1
+    2   -    1 + 2 = 3
+    3   -    3 + 3 = 6
+    6   -    6 + 4 = 10
+    10  -    10 + 5 = 15
+    */
+
+    console.log(reduce);
+    console.log(reduce2);
+
+  </script>
+</body>
+</html>
