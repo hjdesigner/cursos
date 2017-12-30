@@ -116,7 +116,7 @@
     
     return {
       getMessage: getMessage,
-      clearCEP: clearCEP
+      clearCEP: clearCEPcd
     }
     
   }
