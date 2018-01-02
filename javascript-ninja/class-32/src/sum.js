@@ -1,0 +1,21 @@
+'use strict';
+
+function sum(num1, num2){
+  if(isEmpty(num1) || isEmpty(num2)) {
+    return new Error('Passe dois números por paâmentro');
+  }
+  if (!isNumber(num1) || !isNumber(num2)){
+    return new Error('Os parâmentros devem ser números!');
+  }
+  return num1 + num2;
+}
+
+function isEmpty(arg) {
+  return !arg;
+}
+
+function isNumber(arg) {
+  return Object.prototype.toString.call(arg) === '[object Number]';
+}
+
+module.exports = sum;
